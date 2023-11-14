@@ -1,0 +1,11 @@
+{% extends 'layout.html'%}
+{% block body %}
+<h1> Books in Cart </h1>
+{% for book in books%}
+<h2>{{book[1]}}</h2>
+<form action = "/removefromcart" method = "post">
+<input type="hidden" name="book_id" value="{{book[0]}}">
+<input type="submit" value="Remove">
+</form>
+{% endfor %}
+{% endblock %}
